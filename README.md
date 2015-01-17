@@ -3,5 +3,5 @@ Contains all the codes of Cracking the Coding Interview(Note: The coding solutio
 
 
 Chapter 1:
-  Problem 1.1: 
-  Problem 1.4: 
+  Problem 1.1: UniqueCharacters.java
+  Problem 1.4: ReplaceString.java
