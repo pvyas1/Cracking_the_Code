@@ -6,3 +6,4 @@ Chapter 1:
   Problem 1.1: UniqueCharacters.java
   Problem 1.4: ReplaceString.java
   Problem 1.5: Compressing a given string
+  Problem 2.1: Delete Duplicate in a Linked List
