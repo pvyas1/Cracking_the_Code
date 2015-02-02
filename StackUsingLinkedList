@@ -1,0 +1,128 @@
+/*import java.util.*;
+
+class Node{
+	Node next = null;
+	int Data;
+	
+	public Node(int d){
+		Data = d;
+	}
+	
+	void addNode(int d){
+		Node newN = new Node(d);
+		Node start = this;
+		while(start.next != null){
+			start = start.next;
+		}
+		start.next = newN;
+	}
+	
+	void displayList(){
+		Node start = this;
+		if(start.next == null){
+			System.out.println("Nothing to display. Linked List is empty");
+		}
+		else{
+			while(start.next != null){
+				start = start.next;
+				System.out.print("-->"+start.Data);
+			}
+		}
+	}
+}
+
+public class deleteDup{
+	public static void main(String[] args){
+		Node head = new Node(0);
+		int i = 0, value = 0, counter = 0;
+		Scanner input = new Scanner(System.in);
+		System.out.print("How many nodes you want to enter? ");
+		counter = input.nextInt();
+		for(i=0;i<counter;i++){
+			System.out.print("\n Enter the new Node Value: ");
+			value = input.nextInt();
+			head.addNode(value);
+		}
+		System.out.println("\nElements Added Successfully");
+		System.out.println("The Linked List looks like this:");
+		head.displayList();
+		input.close();
+	}
+}*/
+
+import java.util.*;
+
+class Node{
+	Node next = null;
+	int Data;
+	
+	public Node(int d){
+		Data = d;
+	}
+	
+	void addNode(int d){
+		Node newN = new Node(d);
+		Node start = this;
+		while(start.next != null){
+			start = start.next;
+		}
+		start.next = newN;
+	}
+	
+	void displayList(){
+		Node start = this;
+		if(start.next == null){
+			System.out.println("Nothing to display. Linked List is empty");
+		}
+		else{
+			while(start.next != null){
+				start = start.next;
+				System.out.print("-->"+start.Data);
+			}
+		}
+	}
+}
+
+public class deleteDup{
+	public static void main(String[] args){
+		Node head = new Node(0);
+		Node prev = head;
+		Node n = head;
+		Hashtable<Integer,Boolean> nodeTable = new Hashtable<Integer,Boolean>();
+		int i = 0, value = 0, counter = 0;
+		Scanner input = new Scanner(System.in);
+		System.out.print("How many nodes you want to enter? ");
+		counter = input.nextInt();
+		for(i=0;i<counter;i++){
+			System.out.print("\n Enter the new Node Value: ");
+			value = input.nextInt();
+			head.addNode(value);
+			nodeTable.put(value,true);
+		}
+		System.out.println("\nElements Added Successfully");
+		System.out.println("The Linked List looks like this:");
+		head.displayList();
+		System.out.println("\nRemoving the duplicates");
+		if(n.next == null){
+			System.out.println("The list is empty");
+		}
+		else{
+			while(n.next != null){
+				System.out.println("N prev "+n.Data+" ");
+				n = n.next;
+				System.out.println("N post "+n.Data+" ");
+				if(nodeTable.containsKey(n.Data)){
+					prev.next = n.next;
+					System.out.print("N If "+n.Data+" ");
+				}
+				else{
+					prev = n;
+					//System.out.print(" "+prev.Data+" ");
+				}
+				//n = n.next;
+			}
+		}
+		head.displayList();
+		input.close();
+	}
+}
